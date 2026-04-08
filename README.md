@@ -473,3 +473,115 @@ Matching issue drafts are available in `.github/issue-drafts/` so they can be tu
 ## Status
 
 Concept stage. Product scope is defined at a vision level and should now be refined into concrete epics, domain models, and implementation milestones.
+
+## Contributing
+
+### Prerequisites
+
+- [.NET 10 SDK](https://dotnet.microsoft.com/download)
+- [Node.js](https://nodejs.org/) with npm 10+
+- [.NET Aspire workload](https://learn.microsoft.com/en-us/dotnet/aspire/fundamentals/setup-tooling): `dotnet workload install aspire`
+
+### Start local development environment
+
+The local dev environment is orchestrated via .NET Aspire. Starting the AppHost launches and wires up all services:
+
+```bash
+dotnet run --project src/DevEnvironment/src/ocent.DevEnvironment.AppHost
+```
+
+The Aspire dashboard is available at the URL printed to the console on startup.
+
+### Frontend
+
+Install dependencies before the first run:
+
+```bash
+cd src/frontend
+npm install
+```
+
+Start the Angular dev server standalone (without Aspire):
+
+```bash
+npm start
+```
+
+### Code formatting
+
+Format all .NET projects from the repository root:
+
+```bash
+dotnet format
+```
+
+Format frontend code with Prettier:
+
+```bash
+cd src/frontend
+npx prettier --write .
+```
+
+### Linting
+
+Lint TypeScript and Angular templates:
+
+```bash
+cd src/frontend
+npm run lint:ts
+```
+
+Lint SCSS styles:
+
+```bash
+cd src/frontend
+npm run lint:styles
+```
+
+Lint everything at once:
+
+```bash
+cd src/frontend
+npm run lint
+```
+
+Auto-fix lint issues:
+
+```bash
+cd src/frontend
+npm run lint:fix
+```
+
+### Tests
+
+Run .NET tests from the repository root:
+
+```bash
+dotnet test
+```
+
+Run frontend tests:
+
+```bash
+cd src/frontend
+npm test
+```
+
+### Quality thresholds
+
+The project targets a minimum of **80% test coverage** and a minimum **mutation score of 80** for all modules.
+
+### Mutation testing
+
+Run Stryker mutation tests for .NET projects:
+
+```bash
+dotnet stryker --test-runner mtp
+```
+
+Run Stryker mutation tests for the frontend:
+
+```bash
+cd src/frontend
+npm run mutate
+```

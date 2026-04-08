@@ -1,0 +1,6 @@
+@ocent.Backend.WebApi_HostAddress = http://localhost:5191
+
+GET {{ocent.Backend.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

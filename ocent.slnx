@@ -1,0 +1,19 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/backend/" />
+  <Folder Name="/src/backend/src/">
+    <Project Path="src/backend/src/ocent.Backend.WebApi/ocent.Backend.WebApi.csproj" />
+  </Folder>
+  <Folder Name="/src/backend/tests/">
+    <Project Path="src/backend/tests/ocent.Backend.WebApi.Tests/ocent.Backend.WebApi.Tests.csproj" />
+  </Folder>
+  <Folder Name="/src/DevEnvironment/" />
+  <Folder Name="/src/DevEnvironment/src/">
+    <Project Path="src/DevEnvironment/src/ocent.DevEnvironment.AppHost/ocent.DevEnvironment.AppHost.csproj" />
+  </Folder>
+  <Folder Name="/src/DevEnvironment/tests/" />
+  <Folder Name="/src/DevEnvironment/tests/ocent.DevEnvironment.AcceptanceTests/" />
+  <Folder Name="/src/DevEnvironment/tests/ocent.DevEnvironment.AcceptanceTests/ocent.DevEnvironment.AcceptanceTests.TestProject/">
+    <Project Path="src/DevEnvironment/tests/ocent.DevEnvironment.AcceptanceTests/ocent.DevEnvironment.AcceptanceTests.TestProject/ocent.DevEnvironment.AcceptanceTests.csproj" />
+  </Folder>
+</Solution>

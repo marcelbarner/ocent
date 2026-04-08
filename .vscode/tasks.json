@@ -1,0 +1,130 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    // ─── Test ────────────────────────────────────────────────────────────────
+    {
+      "label": "Test: Backend",
+      "type": "shell",
+      "command": "dotnet test",
+      "group": "test",
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false
+      }
+    },
+    {
+      "label": "Test: Frontend",
+      "type": "shell",
+      "command": "npm run test -- --watch=false",
+      "options": {
+        "cwd": "${workspaceFolder}/src/frontend"
+      },
+      "group": "test",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false
+      }
+    },
+    {
+      "label": "Test: All",
+      "dependsOn": ["Test: Backend", "Test: Frontend"],
+      "dependsOrder": "parallel",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false
+      }
+    },
+
+    // ─── Lint ─────────────────────────────────────────────────────────────────
+    {
+      "label": "Lint: Backend",
+      "type": "shell",
+      "command": "dotnet format --verify-no-changes",
+      "group": "build",
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false
+      }
+    },
+    {
+      "label": "Lint: Frontend",
+      "type": "shell",
+      "command": "npm run lint",
+      "options": {
+        "cwd": "${workspaceFolder}/src/frontend"
+      },
+      "group": "build",
+      "problemMatcher": ["$eslint-stylish"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false
+      }
+    },
+    {
+      "label": "Lint: All",
+      "dependsOn": ["Lint: Backend", "Lint: Frontend"],
+      "dependsOrder": "parallel",
+      "group": "build",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false
+      }
+    },
+
+    // ─── Lint Fix ─────────────────────────────────────────────────────────────
+    {
+      "label": "Lint Fix: Backend",
+      "type": "shell",
+      "command": "dotnet format",
+      "group": "build",
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false
+      }
+    },
+    {
+      "label": "Lint Fix: Frontend",
+      "type": "shell",
+      "command": "npm run lint:fix",
+      "options": {
+        "cwd": "${workspaceFolder}/src/frontend"
+      },
+      "group": "build",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false
+      }
+    },
+    {
+      "label": "Lint Fix: All",
+      "dependsOn": ["Lint Fix: Backend", "Lint Fix: Frontend"],
+      "dependsOrder": "parallel",
+      "group": "build",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false
+      }
+    }
+  ]
+}
