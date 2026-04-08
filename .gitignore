@@ -359,6 +359,9 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/aspnetcore,dotnetcore,visualstudiocode,windows,angular
 
+# Claude Code local settings
+.claude/settings.local.json
+
 # Beads / Dolt files (added by bd init)
 .dolt/
 *.db
